@@ -17,7 +17,7 @@ Then open `http://localhost:3000`.
 npm run build
 ```
 
-This is a standard Next.js app deployment. It does not require a database, server API routes, Supabase, login, or authentication.
+This is a standard static-export Next.js app for CloudBase Static Website Hosting. It does not require a database, server API routes, Supabase, login, or authentication.
 
 ## Deploy with GitHub and Vercel
 
@@ -38,7 +38,7 @@ If Vercel shows an Output Directory value such as `public`, remove it. This proj
 
 ## Deploy to Tencent CloudBase Hosting
 
-This project can also be deployed through Tencent CloudBase Static Website Hosting as a Next.js application deployment. Keep it as a standard Next.js app; do not enable `output: "export"` and do not add backend services for this version.
+This project is configured for Tencent CloudBase Static Website Hosting with Next.js static export. Running `npm run build` generates the `./out` directory that CloudBase should deploy.
 
 ### Option 1: Git repository deployment
 
@@ -50,7 +50,7 @@ This project can also be deployed through Tencent CloudBase Static Website Hosti
    - Framework: `Next.js`
    - Install Command: `npm install`
    - Build Command: `npm run build`
-   - Build Output Directory: use the CloudBase default for Next.js application deployment; if CloudBase asks explicitly, use `.next`
+   - Build Output Directory: `./out`
    - Deploy Path: `/`
 6. Start the deployment and open the generated CloudBase domain after it completes.
 
@@ -59,7 +59,7 @@ This project can also be deployed through Tencent CloudBase Static Website Hosti
 ```bash
 npm i -g @cloudbase/cli
 tcb login
-tcb app deploy --framework next --output-dir .next -e <your-env-id>
+tcb app deploy --framework next --output-dir ./out -e <your-env-id>
 ```
 
 Replace `<your-env-id>` with your CloudBase environment ID.
