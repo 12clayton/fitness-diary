@@ -27,12 +27,14 @@ This is a standard Next.js app deployment. It does not require a database, serve
 4. Keep Vercel's default Next.js settings:
    - Framework Preset: `Next.js`
    - Build Command: `npm run build`
-   - Output Directory: leave default
    - Install Command: `npm install`
+   - Output Directory: leave blank / unspecified
 5. Click **Deploy**.
 6. After deployment finishes, open the Vercel project URL.
 
 Vercel will rebuild automatically whenever changes are pushed to the connected GitHub branch.
+
+If Vercel shows an Output Directory value such as `public`, remove it. This project is a standard Next.js app and should use Vercel's default Next.js output.
 
 ## Open on iPhone
 
